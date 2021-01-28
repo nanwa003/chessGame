@@ -2,9 +2,9 @@
 
  
  > Authors: 
- >Nam (Alexander) Tran (https://github.com/alexander7862)
- >Andres Arevalo (https://github.com/aa2510759)
- >Nardin Anwar (https://github.com/)
+ > Nam (Alexander) Tran (https://github.com/alexander7862)
+ > Andres Arevalo (https://github.com/aa2510759)
+ > Nardin Anwar (https://github.com/)
  
 
  > ## Expectations
