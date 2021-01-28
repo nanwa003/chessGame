@@ -1,12 +1,10 @@
- > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
- > Prompt text is any lines beginning with "\>"
- > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# Chess Game
+
 
  
- > Authors: \[Nam (Alexander) Tran](https://github.com/alexander7862)\
- \[Andres Arevalo](https://github.com/aa2510759)\
- \[Nardin Anwar](https://github.com/)\
+ > Authors: 
+ >Nam (Alexander) Tran (https://github.com/alexander7862)
+ >Andres Arevalo (https://github.com/aa2510759)
+ >Nardin Anwar (https://github.com/)
  
 
  > ## Expectations
