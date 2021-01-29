@@ -15,6 +15,7 @@
  ## What languages/tools/technologies do you plan to use? 
  >   * We will use C++, Vim, Git/Github, and PuTTy
  ## What will be the input/output of your project? 
+ > * The input will be keyboard control based on user input. The ouput will be a char grid representation of a chess board.
 ## What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
 >* Design Pattern 1: Composite
 We chose the composite design pattern for our project because it would be straightforward implementation. For our project, we could implement the piece as a Base class, since the pieces all have the same functionality. This design pattern would make things easier in the case of promotion for a pawn. We can use this pattern to determine when a piece is captured.
