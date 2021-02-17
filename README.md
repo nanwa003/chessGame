@@ -23,3 +23,6 @@ We chose the composite design pattern for our project because it would be straig
 The strategy design pattern would be useful for changing a piece's behavior depending on the context of the game. For example, a pawn moving forward two spots on the first move but after that can only move one spot. Another example is when the pawn gets promoted to queen, we would change its functionality so that the movement is the same as a queen. Because there are many different contexts in chess where pieces can move differently, it would be helpful to implement the strategy design pattern in our project. 
 
 
+#### OMT Diagram
+
+![](Final%20Proj%20OMT.jpg)
