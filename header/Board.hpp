@@ -15,7 +15,7 @@ class Square {
 	{
 		this->setPiece(p);
 		this->setXpos(ex);
-		this->setYpos;
+		this->setYpos(why);
 	}
 
 	Piece getPiece()
