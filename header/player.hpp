@@ -21,11 +21,12 @@ Player(string _name,string _palyerColor);
  *    */
 ~Player();
 
-bool makeMove();
+
 void capture(Piece * aPiece);
-int calcScore() const;
+int calcScore() const; //calc score 
 void setName(string player1);//function to set player names
 string getName() const;//function to get names
+void setColor();
 
 private:
 string name;
