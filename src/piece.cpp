@@ -5,9 +5,20 @@
 #include "../header/piece.hpp"
 #include <iostream>
 
+Piece::Piece(bool color)
+{
+	setColor(color);
+}
+
+
 Piece::Piece(int x, int y)
 {
 	setPos(x,y);
+}
+
+void Piece::setColor(bool c)
+{
+	color = c;
 }
 
 void Piece::setPos(int x, int y)
