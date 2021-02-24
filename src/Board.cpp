@@ -9,6 +9,15 @@ Board::Board()
 	setBoard();
 }
 
+//returns square indexed by user with exception handling
+Square Board::getCells (int x, int y)
+{
+	if (x < 0 || x > 7 ||y < 0 || y > 7)
+		//exception handling right here
+	return squares[x][y];
+	
+}
+
 void Board::setBoard()
 {
 	//setup board with the black pieces first, then white pieces
