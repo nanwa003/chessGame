@@ -1,7 +1,6 @@
 #include <iostream>
-#include "../header/piece.hpp"
-#include "../header/board.hpp"
-#include "../header/game.hpp"
+
+#include "../header/player.hpp"
 
 
 Player::Player(string _name, string _playerColor) :name(_name),playerColor(_playerColor) {
@@ -37,7 +36,8 @@ string player::getName() const
 {
     return player1;
 }
-void Player:: setColor (const palyerColor & color){
-setColor( color.white, color.black);
+
+void Player:: setColor (const palyerColor & colorPlayer){
+setColor( colorPlayer.white, colorPlayer.black);
 }
 

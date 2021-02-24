@@ -1,8 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "piece.hpp"
-#include "game.hpp"
+
 #include <set>
 
 using namespace std;
