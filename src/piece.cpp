@@ -5,7 +5,7 @@
 #include "../header/piece.hpp"
 #include <iostream>
 
-Piece::Piece(bool color)
+Piece::Piece(Color color)
 {
 	setColor(color);
 }
@@ -16,7 +16,7 @@ Piece::Piece(int x, int y)
 	setPos(x,y);
 }
 
-void Piece::setColor(bool c)
+void Piece::setColor(Color c)
 {
 	color = c;
 }
@@ -25,8 +25,9 @@ void Piece::setPos(int x, int y)
 {
 	myPos.x = x;
 	myPos.y = y;
-	myPos.occupied = true;	
+//	myPos.occupied = true;	
 }
+/*
 
 bool Piece::capture(pos check)
 {
@@ -39,8 +40,20 @@ bool Piece::capture(pos check)
 	
 	
 }
+*/
 
-int Piece::getVal()
+pos getPos()
+{
+	return myPos;
+}
+
+Color getColor()
+{
+	return color;
+}
+
+
+std::string Piece::getVal()
 {
 	return val;
 }

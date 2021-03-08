@@ -7,15 +7,15 @@
 class Pawn : public Piece
 {
 	private:
-	int value = 1;
+	std::string val = "P"
 	public:
-	virtual void movePiece();
+	virtual bool validateMove();
 	
 	~Pawn() = default;
 
 
-	int getValue();
-	virtual void setVal();
+	std::string getValue();
+	virtual void setVal(std::string );
 	using Piece::Piece;	
 };
 

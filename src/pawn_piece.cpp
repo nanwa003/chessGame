@@ -5,20 +5,21 @@
 #include <iostream>
 
 
- void Pawn::movePiece()
+bool Pawn::validateMove()
 {
 	std::cout << std::endl << "Moving" << std::endl;
+	return false;
 }
 
-int Pawn::getValue()
+std::string Pawn::getValue()
 {
         return value;
 }
 
-void Pawn::setVal()
+void Pawn::setVal(std::string v)
 {	
 
-	val = getValue();	
+	val = v;
 }
 
 
