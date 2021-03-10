@@ -1,10 +1,10 @@
 //square class implementation
 
-#ifndef _SQUARE_HPP
-#define _SQUARE_HPP
+#ifndef _SQUARE_CPP
+#define _SQUARE_CPPP
 
 #include "../header/Square.hpp"
-#include "Piece.cpp"
+#include "piece.cpp"
 
 
 
