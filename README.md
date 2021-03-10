@@ -47,6 +47,7 @@ Color getColor returns the color type whether white or black
 Virtual bool validMove checks whether the move made is valid and will be implemented for the different classes.
 
 
+#### Screenshots
 
+![](chess%20%_%20%catching%20%Error.JPG)
 
-![](chess%20%_%20%catching%20%Error.jpg)
