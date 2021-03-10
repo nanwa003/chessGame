@@ -25,7 +25,7 @@ The strategy design pattern would be useful for changing a piece's behavior depe
 
 #### OMT Diagram
 
-![](Final%20Proj%20OMT.jpg)
+![](Final%20Proj%20OMT%20Revised.jpg)
 
 #### Diagram Description
 -The OMT Diagram depicts a Composite Design Pattern and a Strategy Design pattern. The Composite Pattern is implemented in the classes that inherit from the piece class since they redefine the functions of the Piece class. Also, the Game class is composite since it has the Player and Board class as leafs The strategy pattern is also implemented using Piece as the interface, and all the children that inherit from Piece have different movements depending on what type of piece they are and what context they are in. For instance, the pawn can move as any other piece except the king when it is at the other end of the chessboard, so it has another function that can change its movement capabilities. The pieces themselves have different values set with the member function setVal(). 
