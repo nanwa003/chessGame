@@ -18,7 +18,7 @@ class Board{
            ~Board();
 	   void Draw();
 	   bool movePiece (Position p1, Position p2);
-	   Piece* getPiece(Position posOfPiece);
+	   Piece* GetPiece(Position posOfPiece);
 }
 
 

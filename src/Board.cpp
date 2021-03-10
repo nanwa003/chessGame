@@ -143,7 +143,7 @@ bool Board::movePiece(Position pos1, Position pos2) {
         return moveIsDone;
 }
 
-Piece* Board::getPiece(Position pieceAtPos) {
+Piece* Board::GetPiece(Position pieceAtPos) {
     return cells[pieceAtPos.ypos][pieceAtPos.xpos].getPiece();
 }
 
