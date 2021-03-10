@@ -1,5 +1,5 @@
-#include "Board.hpp"      
-#include "piece.hpp" 
+//#include "Board.hpp"      
+//#include "piece.hpp" 
 #include <iostream>
 
 using namespace std;
@@ -9,7 +9,7 @@ void DisplayInstructions();
 void ToLowerCase(string *str);
 bool ValidateInput(string input_1, string input_2);
 Position ConvertChessNotation(string move);
-Board board;
+Board cells;
 
 
 int main(int argc, char** argv) {
