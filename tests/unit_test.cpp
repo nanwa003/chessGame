@@ -7,6 +7,7 @@
 #include "../src/Board.cpp"
 #include "../src/piece.cpp"
 #include "piece_test.hpp"
+#include "validateMoveTests.hpp"
 
  Board cells;
 
