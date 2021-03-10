@@ -117,11 +117,11 @@ void Board::initPieces()
         cells[bKingPos.ypos][bKingPos.xpos].setPiece(new King(Black, bKingPos));
 
 
-        Position bQueenPos = {3,0};
-        cells[bQueenPos.ypos][bQueenPos.xpos].setPiece(new Queen(Black, bQueenPos));
+        Position wQueenPos = {3,0};
+        cells[wQueenPos.ypos][wQueenPos.xpos].setPiece(new Queen(White, wQueenPos));
 
-        Position bQueenPos2 = {3,7};
-        cells[bQueenPos2.ypos][bQueenPos2.xpos].setPiece(new Queen(White, bQueenPos2));
+        Position bQueenPos = {3,7};
+        cells[bQueenPos.ypos][bQueenPos.xpos].setPiece(new Queen(Black, bQueenPos));
 
 
 

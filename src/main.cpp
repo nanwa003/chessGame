@@ -1,5 +1,5 @@
-//#include "Board.hpp"      
-//#include "piece.hpp" 
+#include "../src/Board.cpp"      
+#include "../src/piece.cpp" 
 #include <iostream>
 
 using namespace std;
@@ -14,7 +14,7 @@ Board cells;
 
 int main(int argc, char** argv) {
 string input_1, input_2;
-Color TurnnColor = White;
+Color TurnColor = White;
 bool moveSucceed = false;
 Position moveFrom;
 Position moveTo;
@@ -24,7 +24,7 @@ DisplayIntro();
 
 while (input_1 != "quit") {
 cout << string(4, '\n');
- board.Draw();
+ cells.Draw();
 
 do {
 if (TurnColor == White) {
@@ -52,13 +52,17 @@ ToLowerCase(&input_2);
 while (input_1 == "help" || !ValidateInput(input_1, input_2));
 moveFrom = ConvertChessNotation(input_1);
 moveTo = ConvertChessNotation(input_2);
-
-if (cells.GetPiece(moveFrom)->GetColor() != TurnColor) {
-cout << "Move Invalid: Wrong color pawn selected" << endl;
+if (cells.GetPiece(moveFrom) == NULL)
+                {
+                        moveSucceed = false;
+                        cout << "No piece selected" << endl;
+                }
+else if (cells.GetPiece(moveFrom)->getColor() != TurnColor) {
+cout << "Move Invalid: Wrong color selected" << endl;
 moveSucceed = false;
 }
 else {
-moveSucceed = cells.MovePiece(moveFrom, moveTo);
+moveSucceed = cells.movePiece(moveFrom, moveTo);
 if (moveSucceed == false) {
 cout << "Move Invalid" << endl;
 } else {
@@ -104,12 +108,7 @@ cout << "Incorrect input size. the input should be entred a  letter followed by 
 
 Position moveFrom = ConvertChessNotation(input_1);
 Position moveTo = ConvertChessNotation(input_2);
-if (cells.GetPiece(moveFrom) == NULL)
-                {
-                        moveSucceed = false;
-                        cout << "No piece selected" << endl;
-                }
-else if (moveFrom.xpos < 0 || moveFrom.xpos > 7 || moveFrom.ypos < 0 || moveFrom.ypos > 7) {
+ if (moveFrom.xpos < 0 || moveFrom.xpos > 7 || moveFrom.ypos < 0 || moveFrom.ypos > 7) {
 cout << "Source location out of bounds" << endl;
 } else if (moveTo.xpos < 0 || moveTo.xpos > 7 || moveTo.ypos < 0 || moveTo.ypos > 7) {
 cout << "Destination location out of bounds" << endl;

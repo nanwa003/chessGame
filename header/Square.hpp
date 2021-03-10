@@ -3,7 +3,7 @@
 #ifndef _SQUARE_HPP
 #define _SQUARE_HPP
 
-#include "../src/Piece.cpp"
+#include "../src/piece.cpp"
 
 
 class Square {
@@ -15,10 +15,10 @@ private:
 public:
      //constructors and destructors 
 	Square();
-        ~Square();
+        ~Square() = default;
 
      	Piece *getPiece();
 	void setPiece(Piece *piece);
 	void Clear();
-}
+};
 #endif
