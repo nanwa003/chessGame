@@ -36,7 +36,7 @@ if (TurnColor == White) {
 do {
 cout << "Enter where to move the piece from: ";
 cin >> input_1; 
-ToLowerCase(&input1);
+ToLowerCase(&input_1);
 
 if (input_1 == "quit") {
 return 0;
@@ -53,12 +53,12 @@ while (input_1 == "help" || !ValidateInput(input_1, input_2));
 moveFrom = ConvertChessNotation(input_1);
 moveTo = ConvertChessNotation(input_2);
 
-if (board.GetPiece(moveFrom)->GetColor() != TurnColor) {
+if (cells.GetPiece(moveFrom)->GetColor() != TurnColor) {
 cout << "Move Invalid: Wrong color pawn selected" << endl;
 moveSucceed = false;
 }
 else {
-moveSucceed = board.MovePiece(moveFrom, moveTo);
+moveSucceed = cells.MovePiece(moveFrom, moveTo);
 if (moveSucceed == false) {
 cout << "Move Invalid" << endl;
 } else {
@@ -104,7 +104,12 @@ cout << "Incorrect input size. the input should be entred a  letter followed by 
 
 Position moveFrom = ConvertChessNotation(input_1);
 Position moveTo = ConvertChessNotation(input_2);
-if (moveFrom.xpos < 0 || moveFrom.xpos > 7 || moveFrom.ypos < 0 || moveFrom.ypos > 7) {
+if (cells.GetPiece(moveFrom) == NULL)
+                {
+                        moveSucceed = false;
+                        cout << "No piece selected" << endl;
+                }
+else if (moveFrom.xpos < 0 || moveFrom.xpos > 7 || moveFrom.ypos < 0 || moveFrom.ypos > 7) {
 cout << "Source location out of bounds" << endl;
 } else if (moveTo.xpos < 0 || moveTo.xpos > 7 || moveTo.ypos < 0 || moveTo.ypos > 7) {
 cout << "Destination location out of bounds" << endl;

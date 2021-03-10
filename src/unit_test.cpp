@@ -2,7 +2,9 @@
 #include "gtest/gtest.h"
 #include "../header/bishopTest.hpp"
 #include "../header/kingTest.hpp"
-#include "../header/pieceTest.hh"
+#include "../header/pieceTest.hpp"
+#include "../header/boardTest.hpp"
+#include "../header/pieceTest.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
