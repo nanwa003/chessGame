@@ -7,6 +7,13 @@
 #include "../header/pawn_piece.hpp"
 #include "../header/rook_piece.hpp"
 
+Position ConvertChessNotation(string moveInputStr) {
+Position movePosition;
+ movePosition.xpos = (int) moveInputStr[0] - 97;
+movePosition.ypos = atoi(&moveInputStr[1]) - 1;
+return movePosition;
+}
+
 
 TEST(BoardTest,  isWithinboard) {
 Board b;
