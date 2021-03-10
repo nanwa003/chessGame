@@ -15,11 +15,11 @@ Square::Square() {
 
 
 //Getter function 
-Piece* Square::GetPiece() {
+Piece* Square::getPiece() {
 	return chessPiece;
 }
 
-void Square::SetPiece(Piece* p) {
+void Square::setPiece(Piece* p) {
 	this->chessPiece = p;
 }
 

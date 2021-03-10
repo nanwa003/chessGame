@@ -3,7 +3,7 @@
 #define _BOARD_HPP_
 
 #include "../src/Square.cpp"
-
+#include "../header/piece.cpp"
 
 class Board{
    private:
@@ -18,7 +18,7 @@ class Board{
            ~Board();
 	   void Draw();
 	   bool movePiece (Position p1, Position p2);
-	   Piece* GetPiece(Position posOfPiece);
+	   Piece* getPiece(Position posOfPiece);
 }
 
 
