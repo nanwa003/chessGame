@@ -49,4 +49,4 @@ Virtual bool validMove checks whether the move made is valid and will be impleme
 
 
 
-
+![](chess%20%_catching%20%Error.jpg)
