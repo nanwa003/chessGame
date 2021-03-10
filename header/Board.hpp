@@ -15,7 +15,7 @@ class Board{
    public:
 	//constructors and destructors
 	   Board();
-           ~Board();
+           ~Board() = default;
 	   void Draw();
 	   bool movePiece (Position p1, Position p2);
 	   Piece* GetPiece(Position posOfPiece);
