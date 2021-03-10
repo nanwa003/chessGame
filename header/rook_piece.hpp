@@ -6,17 +6,14 @@
 
 class Rook : public Piece
 {
-        private:
-        std::string value = "R";
+    
         public:
-        virtual bool validateMove();
+        virtual bool validateMove(Position);
 
-        ~Pawn() = default;
+       virtual ~Rook() = default;
 
-
-        std::string getValue();
-        virtual void setVal(std::string);
-        using Piece::Piece;
+	Rook(Color color, Position pos);
+       
 };
 
 

@@ -7,16 +7,17 @@
 class Pawn : public Piece
 {
 	private:
-	std::string val = "P"
+	bool doubleJump;
 	public:
-	virtual bool validateMove();
+	bool validateMove(Position);
 	
-	~Pawn() = default;
+	~Pawn(){}
 
 
-	std::string getValue();
-	virtual void setVal(std::string );
-	using Piece::Piece;	
+	//std::string getValue();
+	//virtual void setVal(std::string );
+	//using Piece::Piece;
+	Pawn(Color color, Position pos);
 };
 
 

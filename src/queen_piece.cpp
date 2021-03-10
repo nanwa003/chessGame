@@ -3,24 +3,50 @@
 
 #include "../header/queen_piece.hpp"
 #include <iostream>
+extern Board cells;
 
-
- void Queen::validateMove()
-{
-        std::cout << std::endl << "Moving" << std::endl;
-	return false;
+Queen::Queen(Color color, Position pos) {
+    this->val = "Q";
+    this->color = color;
+    this->pos = pos;
 }
 
-std::string Queen::getValue()
+
+bool Queen::validateMove(Position moveTo)
 {
-        return value;
+	bool validMove = false;
+        for (int i = 1; i < 8;i++)
+	{
+	if (moveTo.ypos == pos.ypos + i && (moveTo.xpos == pos.xpos + i)&& (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+        {validMove = true;}
+        else if (moveTo.ypos == pos.ypos + i && (moveTo.xpos == pos.xpos - i)&& (cells.GetPiece(moveTo) == NULL
+        || (cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color))))
+        {validMove = true;}
+        else if (moveTo.ypos == pos.ypos - i && (moveTo.xpos == pos.xpos + i)&& (cells.GetPiece(moveTo) == NULL
+        || (cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color))))
+        {validMove = true;}
+        else if (moveTo.ypos == pos.ypos - i && (moveTo.xpos == pos.xpos - i)&& (cells.GetPiece(moveTo) == NULL
+        || (cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color))))
+        {validMove = true;}
+
+        else if (moveTo.ypos == pos.ypos + i && (moveTo.xpos == pos.xpos)&& (cells.GetPiece(moveTo) == NULL
+        || (cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color))))
+        {validMove = true;}
+        else if (moveTo.ypos == pos.ypos - i && (moveTo.xpos == pos.xpos)&& (cells.GetPiece(moveTo) == NULL
+        || (cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color))))
+        {validMove = true;}
+        else if (moveTo.ypos == pos.ypos  && (moveTo.xpos == pos.xpos + i)&& (cells.GetPiece(moveTo) == NULL
+        || (cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color))))
+        {validMove = true;}
+        else if (moveTo.ypos == pos.ypos && (moveTo.xpos == pos.xpos - i)&& (cells.GetPiece(moveTo) == NULL
+        || (cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color))))
+        {validMove = true;}
+	}
+	return validMove;
 }
 
-void Queen::setVal(std::string v)
-{
 
-        val = v;
-}
 
 
 

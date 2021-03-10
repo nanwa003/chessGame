@@ -6,17 +6,10 @@
 
 class Queen : public Piece
 {
-        private:
-        std::string value = "Q";
         public:
-        virtual bool validateMove();
-
-        ~Pawn() = default;
-
-
-        std::string getValue();
-        virtual void setVal(std::string);
-        using Piece::Piece;
+         bool validateMove(Position);
+        virtual ~Queen() = default;
+	Queen(Color color, Position pos);
 };
 
 

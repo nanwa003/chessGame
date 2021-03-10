@@ -6,17 +6,12 @@
 
 class King : public Piece
 {
-        private:
-        std::string value = "K";
+       
         public:
-        virtual bool validateMove();
-
-        ~Pawn() = default;
-
-
-        std::string getValue();
-        virtual void setVal(std::string);
-        using Piece::Piece;
+        virtual bool validateMove(Position);
+        ~King() = default;
+        King(Color color, Position pos);
+       
 };
 
 

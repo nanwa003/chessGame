@@ -3,22 +3,44 @@
 
 #include "../header/king_piece.hpp"
 #include <iostream>
+#include "Board.cpp"
+extern Board cells;
 
-
-bool King::validateMove()
-{
-       std::cout << std::endl << "Moving" << std::endl;
-	return false;
-}
-std::string King::getValue()
-{
-        return value;
+King::King(Color color, Position pos) {
+    this->val = "K";
+    this->color = color;
+    this->pos = pos;
 }
 
-void King::setVal(std::string v)
+bool King::validateMove(Position moveTo)
 {
+       bool validMove = false;
+	if (moveTo.ypos == pos.ypos + 1 && (moveTo.xpos == pos.xpos + 1)&& (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+	{validMove = true;}
+	else if (moveTo.ypos == pos.ypos + 1 && (moveTo.xpos == pos.xpos - 1)&& (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+        {validMove = true;}
+	else if (moveTo.ypos == pos.ypos - 1 && (moveTo.xpos == pos.xpos + 1)&& (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+        {validMove = true;}
+	else if (moveTo.ypos == pos.ypos - 1 && (moveTo.xpos == pos.xpos - 1)&& (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+        {validMove = true;}
 
-        val = v;
+	else if (moveTo.ypos == pos.ypos + 1 && (moveTo.xpos == pos.xpos)&& (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+        {validMove = true;}
+	else if (moveTo.ypos == pos.ypos - 1 && (moveTo.xpos == pos.xpos)&& (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+        {validMove = true;}	
+	else if (moveTo.ypos == pos.ypos  && (moveTo.xpos == pos.xpos + 1)&& (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+        {validMove = true;}
+	else if (moveTo.ypos == pos.ypos && (moveTo.xpos == pos.xpos - 1)&& (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+        {validMove = true;}
+	return validMove;
 }
 
 

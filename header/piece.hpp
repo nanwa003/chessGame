@@ -9,34 +9,29 @@ enum Color {
     White
 };
 
-struct pos{
-        int x;
-        int y;
- //       bool occupied;
-};
+typedef struct Coordinates {
+    int xpos;
+    int ypos;
+} Position;
 
 class Piece
 {
-
         protected:
         std::string val;
-	pos myPos;
-//	bool captured;
+	Position pos;
+	Color color;
 	
         public:
-	void setPos(int x, int y);
-  //    bool capture(pos p);
-	void setColor(Color c);
-	
-	pos getPos();
+	void setPos(Position);
+	void setColor(Color );
+	Position getPos();
 	Color getColor();
-        virtual void setVal() = 0;
-        virtual bool validateMove() = 0;
 	std::string getVal();
 	
+        void Draw();
+        virtual bool validateMove(Position) = 0;
 	
-	Piece(bool color);
-	Piece(int x, int y);
+	Piece();
 	~Piece() = default;
 };
 

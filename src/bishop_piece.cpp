@@ -4,22 +4,39 @@
 #include "../header/bishop_piece.hpp"
 #include <iostream>
 
-bool Bishop::validateMove()
-{
-        std::cout << std::endl << "Moving" << std::endl;
-	return false;
+Bishop::Bishop(Color color, Position pos) {
+    this->val = "B";
+    this->color = color;
+    this->pos = pos;
 }
 
-std::string Bishop::getValue()
+bool Bishop::validateMove(Position moveTo)
 {
-        return value;
+        bool validMove = false;
+	
+	for (int i = 1; i < 8; i++)
+	{
+	if(moveTo.ypos == pos.ypos + i && (moveTo.xpos == pos.xpos + i) && (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+        {validMove = true; }
+
+	else if(moveTo.ypos == pos.ypos + i && (moveTo.xpos == pos.xpos - i) && (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+        {validMove = true; }
+
+	else if(moveTo.ypos == pos.ypos - i && (moveTo.xpos == pos.xpos + i) && (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+        {validMove = true; }
+	
+	else if(moveTo.ypos == pos.ypos - i && (moveTo.xpos == pos.xpos - i) && (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+        {validMove = true; }
+	
+     	}
+	return validMove;
+
 }
 
-void Bishop::setVal(std::string v)
-{
-
-        val = v;
-}
 
 
 #endif

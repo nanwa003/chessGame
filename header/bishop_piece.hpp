@@ -6,17 +6,12 @@
 
 class Bishop : public Piece
 {
-        private:
-        std::string value = "B";
+  
         public:
-        virtual bool validateMove();
-
-        ~Pawn() = default;
-
+        virtual bool validateMove(Position);
+	Bishop(Color color, Position pos);
+        virtual ~Bishop() = default;
 	
-        std::string  getValue();
-        virtual void setVal(std::string);
-        using Piece::Piece;
 };
 
 

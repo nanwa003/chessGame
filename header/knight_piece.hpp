@@ -3,20 +3,16 @@
 
 #include "../header/piece.hpp"
 
+extern Board cells;
 
 class Knight : public Piece
 {
-        private:
-        std::string  value = "N";
+     
         public:
-        virtual bool validateMove();
-
-        ~Pawn() = default;
-
-
-        std::string getValue();
-        virtual void setVal(std::string);
-        using Piece::Piece;
+        virtual bool validateMove(Position);
+        virtual ~Knight() = default;
+	
+	Knight(Color color, Position pos);
 };
 
 

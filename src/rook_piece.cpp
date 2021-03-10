@@ -4,22 +4,37 @@
 #include "../header/rook_piece.hpp"
 #include <iostream>
 
-bool Rook::validateMove()
-{
-        std::cout << std::endl << "Moving" << std::endl;
-	return false;
+extern Board cells;
+
+Rook::Rook(Color color, Position pos) {
+    this->val = "R";
+    this->color = color;
+    this->pos = pos;
 }
 
-std::string Rook::getValue()
+bool Rook::validateMove(Position moveTo)
 {
-        return value;
+        bool validMove = false;
+	unsigned int size = 8;
+	for (int i = 1; i <size; i++ )
+	{ 
+		if (moveTo.ypos == pos.ypos + i && (moveTo.xpos ==  pos.xpos)&& (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+        {validMove = true; }
+	else if (moveTo.ypos == pos.ypos - i && (moveTo.xpos ==  pos.xpos)&& (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+        {validMove = true;}
+	else if (moveTo.ypos == pos.ypos  && (moveTo.xpos ==  pos.xpos + i)&& (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+        {validMove = true;}
+	else if (moveTo.ypos == pos.ypos  && (moveTo.xpos ==  pos.xpos - i)&& (cells.GetPiece(moveTo) == NULL
+        || cells.GetPiece(moveTo) != NULL && (cells.GetPiece(moveTo)->getColor() != this->color)))
+        {validMove = true;}
+	}
+	return validMove;
 }
 
-void Rook::setVal(std::string v)
-{
 
-        val = v;
-}
 
 
 #endif
