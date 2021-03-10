@@ -28,30 +28,24 @@ The strategy design pattern would be useful for changing a piece's behavior depe
 ![](Final%20Proj%20OMT%20Revised.jpg)
 
 #### Diagram Description
--The OMT Diagram depicts a Composite Design Pattern and a Strategy Design pattern. The Composite Pattern is implemented in the classes that inherit from the piece class since they redefine the functions of the Piece class. Also, the Game class is composite since it has the Player and Board class as leafs The strategy pattern is also implemented using Piece as the interface, and all the children that inherit from Piece have different movements depending on what type of piece they are and what context they are in. For instance, the pawn can move as any other piece except the king when it is at the other end of the chessboard, so it has another function that can change its movement capabilities. The pieces themselves have different values set with the member function setVal(). 
+-The OMT Diagram depicts a Composite Design Pattern and a Strategy Design pattern. The Composite Pattern is demonstrated in the piece class being a leaf of both the Square and the Board class, The strategy pattern is also implemented using Piece as the interface, and all the children that inherit from Piece have different movements depending on what type of piece they are and what context they are in. For example, the pawn can move two squares on the first move, but only one square on subsequent moves.
 
-The Game class takes into account things like time, checkmate and starting the game.
-Void PlayGame() is a member function that triggers a new game. 
-The intTimer() keeps track of how much time has passed, and Int numPieces() keeps track of how many pieces are on the board
-Bool isCheckmate() checks to see if checkmate has been met
-Void announce_winner() announces the winner via text output
+Square class is a composite class that sets the piece and returns the piece type at that location, so getPiece returns the piece, setPiece sets the piece at a particular location on the board, and Clear() clears a given location on the board and sets it to null.
 
-The Board class simply creates an object to represent a chessboard and can be implemented to make a board of any size.
-Void setRows() sets the row value
-Void setCol() sets the column value
-Int getRows() gets the row value
-Int getCol() gets the column value
-Void create() creates a new board object
+The Board class simply creates an object to represent a chessboard and can be implemented to make a board of any size. It has 3 private members: Square cells, which is a 2D array of Squares for the board setup, initPieces() which initializes the board and the starting positions of the pieces, and isWithinBoard, which takes a Position value and determines if it is within the boundaries of the board.
+Board and ~Board are the default constructors and destructors
+void Draw() draws the chessboard with the labels for the rows and columns
+bool movePiece(pos1, pos2) moves the piece from pos1 to pos2, returns true if move was completed, else returns false
+Piece getPiece(pieceatPos) returns the piece at the position entered, and if it’s empty it returns null
 
-The Player class takes into account the score, color and name. It also keeps track of pieces in play as well as pieces captured.
-Void setName() sets the name of the player
-Void setColor() sets the color of the player
-Int piecesInPlay() determines the amount of pieces in play
-Int PiecesCaptured() determines the amount of pieces captured
 
-The Piece class will describe the team color, values of the pieces and move function.
-Bool color_player will describe the color of the pieces for each player.
-Virtual movePieces(): this function will allow the player to move the pieces as chess game rule and the player command. 
+
+The Piece class includes a struct Position and Color as well as a string type as protected members, since all derived classes will need to access them. 
+Piece() and ~Piece() are constructors and destructors
+void Draw() outputs the piece type
+Color getColor returns the color type whether white or black
+Virtual bool validMove checks whether the move made is valid and will be implemented for the different classes.
+
 
 
 
